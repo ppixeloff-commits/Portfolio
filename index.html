@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visual Archive</title>
   </head>
-  <body class="bg-slate-900 text-slate-200 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+  <body class="bg-gray-950 text-slate-200 font-sans antialiased selection:bg-indigo-500 selection:text-white">
     
-    <header class="fixed top-0 w-full z-50 bg-slate-900/30 backdrop-blur-md border-b border-slate-800 transition-all duration-300" id="header">
+    <header class="sticky top-0 w-full z-50 bg-slate-950/30 backdrop-blur-md border-b border-slate-800 transition-all duration-300" id="header">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="shrink-0">
@@ -32,21 +32,25 @@
             </button>
           </div>
         </div>
-      </div>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-b border-slate-700">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a href="#home" class="block hover:bg-slate-700 hover:text-cyan-400 px-3 py-2 rounded-md text-base font-medium">Home</a>
-          <a href="#about" class="block hover:bg-slate-700 hover:text-cyan-400 px-3 py-2 rounded-md text-base font-medium">About</a>
-          <a href="#projects" class="block hover:bg-slate-700 hover:text-cyan-400 px-3 py-2 rounded-md text-base font-medium">Projects</a>
-          <a href="#contact" class="block hover:bg-slate-700 hover:text-cyan-400 px-3 py-2 rounded-md text-base font-medium">Contact</a>
-        </div>
-      </div>
-    </header>
+      </header>
 
-    <main class="pt-16">
-      <!-- Hero Section -->
-      <section id="home" class="min-h-screen flex items-center justify-center pt-20 pb-12 px-4 sm:px-6 lg:px-8">
+      <section id="home" class="">
+        <div class="flex flex-col md:flex-row h-[calc(100vh-64px)] overflow-hidden"> <!--Obal textu a obrazku -->
+
+          <div class="flex-none w-1/2 flex items-center pl-[calc((100vw-1280px)/2+32px)]"> <!--Text-->
+            <h1 class="text-6xl font-extrabold">
+              I'm <span class="relative inline-block"><span class="absolute inset-0 translate-y-7 bg-linear-to-tr from-indigo-500 to-cyan-500 blur-3xl animate-pulse"></span><span class="relative z-10 bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-cyan-400">Marek</span></span><br/>
+              A beginner 3D Modeler & ocasional Programmer
+            </h1>
+          </div>
+
+          <div class="h-full flex-1"> <!--Obrazek-->
+            <img src="/src/assets/1920x1080.png" class="h-full w-auto max-w-none object-left">        
+          </div>
+      </section>
+      
+      <!-- Hero Section --> <!--
+      <section id="home" class="min-h-screen flex items-center justify-center pl-4 sm:pl-6 lg:pl-8">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
           <div class="flex-1 text-center md:text-left">
             <h2 class="text-indigo-400 font-semibold tracking-wide uppercase mb-3">Hello, World!</h2>
@@ -68,13 +72,13 @@
           </div>
           <div class="flex-1 flex justify-center mt-10 md:mt-0 relative">
             <div class="absolute inset-0 bg-linear-to-tr from-indigo-500 to-cyan-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-            <img src="/src/assets/hero.png" alt="3D Modeler Hero Image" class="relative z-10 w-72 h-72 md:w-96 md:h-96 object-cover rounded-full border-4 border-slate-800 shadow-2xl" onerror="this.src='https://placehold.co/400x400/1e293b/a5b4fc?text=3D+Modeler'"/>
+            <img src="/src/assets/placeholderHero.png" alt="3D Modeler Hero Image" class="relative z-10 content-end object-cover" onerror="this.src='https://placehold.co/400x400/1e293b/a5b4fc?text=3D+Modeler'"/>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- About Section -->
-      <section id="about" class="py-24 bg-slate-800/50">
+      <section id="about" class="py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-indigo-400">Me</span></h2>
@@ -83,10 +87,12 @@
           <div class="flex flex-col md:flex-row gap-12 items-center">
             <div class="flex-1 text-lg text-slate-300 space-y-6 leading-relaxed">
               <p>
-                I am a passionate 3D artist and programmer with a focus on creating detailed models and efficient code solutions. With experience in 3D modeling software and various programming languages, I bring ideas to life through visuals and functionality.
+                I am a passionate junior 3D artist and programmer with a focus on creating detailed models and efficient code solutions.
+                With experience in 3D modeling software and various programming languages, I bring ideas to life through visuals and functionality.
               </p>
               <p>
-                When I'm not modeling or coding, you can find me exploring new software tools, contributing to open-source projects, or experimenting with the latest in digital art and technology. I believe in continuous learning and pushing the boundaries of creativity.
+                When I'm not modeling or coding, you can find me exploring new software tools, contributing to open-source projects, or experimenting with the latest in digital art and technology.
+                I believe in continuous learning and pushing the boundaries of creativity.
               </p>
             </div>
             <div class="flex-1 w-full">
@@ -209,7 +215,7 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="contact" class="py-24 bg-slate-800/50">
+      <section id="contact" class="py-24 bg-gray-900/50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-indigo-400">Touch</span></h2>
           <div class="h-1 w-20 bg-indigo-500 mx-auto rounded mb-8"></div>
@@ -225,7 +231,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 py-8 border-t border-slate-800">
+    <footer class="bg-gray-950 py-8 border-t border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-slate-400 text-sm text-center md:text-left">
           &copy; <span id="year"></span> 3DCodePortfolio. All rights reserved.
