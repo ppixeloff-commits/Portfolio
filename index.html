@@ -7,7 +7,7 @@
     <title>Visual Archive</title>
   </head>
   <body class="bg-gray-950 text-slate-200 font-sans antialiased selection:bg-indigo-500 selection:text-white">
-    
+
     <header class="sticky top-0 w-full z-50 bg-slate-950/30 backdrop-blur-md border-b border-slate-800 transition-all duration-300" id="header">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -37,18 +37,25 @@
       <section id="home" class="">
         <div class="flex flex-col md:flex-row h-[calc(100vh-64px)] overflow-hidden"> <!--Obal textu a obrazku -->
 
-          <div class="flex-none w-1/2 flex items-center pl-[calc((100vw-1280px)/2+32px)]"> <!--Text-->
+          <div class="flex-none w-auto flex items-center pl-[calc((100vw-1280px)/2+32px)] pr-8"> <!--Text-->
             <h1 class="text-6xl font-extrabold">
-              I'm <span class="relative inline-block"><span class="absolute inset-0 translate-y-7 bg-linear-to-tr from-indigo-500 to-cyan-500 blur-3xl animate-pulse"></span><span class="relative z-10 bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-cyan-400">Marek</span></span><br/>
-              A beginner 3D Modeler & ocasional Programmer
+              <span class="relative z-10">
+              <span class="text-5xl">I'm
+              Marek</span><br/>
+              A <span class="relative inline-block"><span class="absolute inset-0 translate-y-2 bg-linear-to-tr from-purple-500 to-pink-500 blur-2xl opacity-70 animate-pulse"></span>
+              <span class="bg-clip-text text-transparent bg-linear-to-r from-purple-500 to-pink-500">3D Modeler</span></span><br/>
+              <span class="text-5xl">& occasional</span><br/>
+              <span class="relative inline-block"><span class="absolute inset-0 translate-y-2 bg-linear-to-tr from-emerald-500 to-cyan-500 blur-2xl opacity-70 animate-pulse"></span>
+              <span class="bg-clip-text text-transparent bg-linear-to-r from-emerald-400 to-cyan-400">Programmer</span></span>
+              </span>
             </h1>
           </div>
 
           <div class="h-full flex-1"> <!--Obrazek-->
-            <img src="/src/assets/1920x1080.png" class="h-full w-auto max-w-none object-left">        
+            <img src="/src/assets/1920x1080.png" class="h-full w-auto max-w-none object-left">
           </div>
       </section>
-      
+
       <!-- Hero Section --> <!--
       <section id="home" class="min-h-screen flex items-center justify-center pl-4 sm:pl-6 lg:pl-8">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
