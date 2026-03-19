@@ -54,10 +54,7 @@ if (wrapper && track && highlight) {
       const totalWidth = (items.length - 1) * step;
       const startX = -totalWidth / 2;
 
-      const spreadFactor = 20;
-      const currentSpread = (activeIndex - (items.length - 1) / 2) * spreadFactor;
-
-      targetX = startX + (activeIndex * step) + currentSpread;
+      targetX = startX + (activeIndex * step);
 
       highlight.style.opacity = "1";
 
@@ -65,6 +62,7 @@ if (wrapper && track && highlight) {
         const distance = index - activeIndex;
         const absDistance = Math.abs(distance);
 
+        const spreadFactor = 20;
         let translateX = distance * spreadFactor;
         const scale = 1 + Math.max(0, (1 - absDistance) * 0.2);
 
