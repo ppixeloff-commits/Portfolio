@@ -25,6 +25,8 @@ const highlight = document.getElementById("activeHighlight");
 if (wrapper && track && highlight) {
   const items = Array.from(track.querySelectorAll(".carousel-item"));
 
+  highlight.style.left = "0px";
+
   if (items.length > 0) {
     let currentX = 0;
     let targetX = 0;
@@ -44,17 +46,27 @@ if (wrapper && track && highlight) {
 
     wrapper.addEventListener("mousemove", (e) => {
       isHovering = true;
-      const rect = wrapper.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const mousePercent = Math.max(0, Math.min(1, mouseX / rect.width));
+
+      const trackRect = track.getBoundingClientRect();
+      const mouseTrackX = e.clientX - trackRect.left;
+
+      const itemWidth = items[0].offsetWidth;
+      const firstCenter = items[0].offsetLeft + itemWidth / 2;
+      const lastCenter = items[items.length - 1].offsetLeft + itemWidth / 2;
+
+      let mousePercent = (mouseTrackX - firstCenter) / (lastCenter - firstCenter);
+      mousePercent = Math.max(0, Math.min(1, mousePercent));
+
       const activeIndex = mousePercent * (items.length - 1);
 
-      const step = 136;
+      const baseIndex = Math.floor(activeIndex);
+      const nextIndex = Math.min(items.length - 1, baseIndex + 1);
+      const fraction = activeIndex - baseIndex;
 
-      const totalWidth = (items.length - 1) * step;
-      const startX = -totalWidth / 2;
+      const left1 = items[baseIndex].offsetLeft;
+      const left2 = items[nextIndex].offsetLeft;
 
-      targetX = startX + (activeIndex * step);
+      targetX = left1 + (left2 - left1) * fraction;
 
       highlight.style.opacity = "1";
 
