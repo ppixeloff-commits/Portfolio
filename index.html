@@ -64,7 +64,7 @@
             </h1>
             <div class="h-2 w-40 bg-indigo-500 mx-auto rounded "></div>
           </div>
-          
+
           <div class="flex flex-col md:flex-row items-center flex-1 overflow-hidden"> <!-- obal obrazku a textu -->
 
             <div class="flex-1 min-w-0"> <!-- obrazek -->
@@ -90,44 +90,46 @@
               </p>
             </div>
           </div>
-          <div id="scrollWrapper" class="relative w-full max-w-6xl mx-auto overflow-visible py-10 cursor-pointer perspective-distant"> 
-  
+          <div id="scrollWrapper" class="relative w-full max-w-6xl mx-auto overflow-visible py-10 cursor-pointer perspective-distant">
+
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-28 bg-linear-to-r from-indigo-500 via-purple-500 to-cyan-500 blur-2xl opacity-60 animate-pulse -z-10 pointer-events-none rounded-full"></div>
-            
-            <div id="imageTrack" class="flex justify-center -space-x-20" style="transform-style: preserve-3d;">
-              
+
+            <div id="imageTrack" class="relative flex justify-center items-center -space-x-14" style="transform-style: preserve-3d;">
+
+              <div id="activeHighlight" class="absolute w-48 h-48 bg-white/10 backdrop-blur-md rounded-2xl opacity-0 pointer-events-none z-0 transition-opacity duration-500"></div>
+
               <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 1;">
                 <img src="/src/assets/carouselIcons/javascript.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
               </div>
-              
+
               <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 2;">
                 <img src="/src/assets/carouselIcons/tailwind.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
               </div>
-              
+
               <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 3;">
                 <img src="/src/assets/carouselIcons/python.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
               </div>
-              
+
               <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 4;">
                 <img src="/src/assets/carouselIcons/html.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
               </div>
-              
+
               <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 5;">
                 <img src="/src/assets/carouselIcons/blender.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
               </div>
-              
+
               <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 4;">
                 <img src="/src/assets/carouselIcons/solidworks.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
               </div>
-              
+
               <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 3;">
                 <img src="/src/assets/carouselIcons/blockbench.png" class="w-32 h-32 object-contain drop-shadow-2xl">
               </div>
-              
+
               <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 2;">
                 <img src="/src/assets/carouselIcons/rhinoceros.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
               </div>
-              
+
               <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 1;">
                 <img src="/src/assets/carouselIcons/autocad.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
               </div>
@@ -137,40 +139,6 @@
         </div>
       </section>
 
-    <!-- About Section
-    <section id="about" class="py-8">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-indigo-400">Me</span></h2>
-          <div class="h-1 w-20 bg-indigo-500 mx-auto rounded"></div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-12 items-center">
-          <div class="flex-1 text-lg text-slate-300 space-y-6 leading-relaxed">
-            <p>
-              I am a passionate junior 3D artist and programmer with a focus on creating detailed models and efficient code solutions.
-              With experience in 3D modeling software and various programming languages, I bring ideas to life through visuals and functionality.
-            </p>
-            <p>
-              When I'm not modeling or coding, you can find me exploring new software tools, contributing to open-source projects, or experimenting with the latest in digital art and technology.
-              I believe in continuous learning and pushing the boundaries of creativity.
-            </p>
-          </div>
-          <div class="flex-1 w-full">
-            <h3 class="text-2xl font-semibold mb-6 text-center md:text-left">Tech Stack</h3>
-            <div class="flex flex-wrap gap-3 justify-center md:justify-start">
-              <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-medium text-cyan-300 shadow-sm">Blender</span>
-              <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-medium text-cyan-300 shadow-sm">Maya</span>
-              <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-medium text-cyan-300 shadow-sm">Python</span>
-              <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-medium text-cyan-300 shadow-sm">JavaScript</span>
-              <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-medium text-cyan-300 shadow-sm">Unity</span>
-              <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-medium text-cyan-300 shadow-sm">Substance Painter</span>
-              <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-full text-sm font-medium text-cyan-300 shadow-sm">Git</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
       <!-- Projects Section -->
       <section id="projects" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -178,7 +146,7 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="text-indigo-400">Projects</span></h2>
             <div class="h-1 w-20 bg-indigo-500 mx-auto rounded"></div>
           </div>
-          
+
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Project Card 1 -->
             <div class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10">
