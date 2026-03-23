@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-@theme {
-  /* Zde si můžeš definovat vlastní barvy nebo proměnné, pokud chceš */
-}
-
 @utility nav-glow {
   position: relative;
   z-index: 0;

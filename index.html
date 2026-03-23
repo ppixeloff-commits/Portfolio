@@ -18,7 +18,7 @@
           </div>
           <div class="hidden md:block">
             <nav class="ml-10 flex items-baseline space-x-8">
-              <a href="#home" class="nav-glow hover:text-cyan-400">Home</a>
+              <a href="#" id="topBtn" class="nav-glow hover:text-cyan-400">Home</a>
               <a href="#aboutMe" class="nav-glow hover:text-cyan-400">About Me</a>
               <a href="#projects" class="nav-glow hover:text-cyan-400">Projects</a>
               <a href="#contact" class="nav-glow hover:text-cyan-400">Contact Me</a>
@@ -52,44 +52,47 @@
           </div>
 
           <div class="h-full flex-1"> <!--Obrazek-->
-            <img src="/src/assets/1920x1080.png" class="h-full w-auto max-w-none object-left">
+            <img src="/src/assets/1920x1080.png" class="js-anim-home h-full w-auto max-w-none object-left opacity-0 translate-x-24">
           </div>
       </section>
 
       <section id="aboutMe" class="py-9">
-        <div class="h-auto flex flex-col overflow-hidden space-y-9"> <!-- obal cele sekce -->
-          <div> <!-- nadpis -->
+        <div class="h-auto flex flex-col overflow-hidden space-y-9">
+          <div>
             <h1 class="text-5xl text-center font-bold pb-2">
               About <span class="bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-cyan-400">Me</span>
             </h1>
-            <div class="h-2 w-40 bg-indigo-500 mx-auto rounded "></div>
+            <div class="h-2 w-40 bg-indigo-500 mx-auto rounded"></div>
           </div>
 
-          <div class="flex flex-col md:flex-row items-center flex-1 overflow-hidden"> <!-- obal obrazku a textu -->
-
-            <div class="flex-1 min-w-0"> <!-- obrazek -->
-              <img src="/src/assets/1920x1080.png" class="h-full w-full max-w-none object-right">
+          <div class="flex flex-col md:flex-row items-center flex-1 overflow-hidden">
+            <div class="flex-1 min-w-0">
+              <img src="/src/assets/1920x1080.png" 
+                  class="js-scroll-anim h-full w-full max-w-none object-right opacity-0 -translate-x-24 transition duration-1000 ease-out">
             </div>
 
-            <div class="flex flex-col justify-center flex-none space-y-6 items-center pr-[calc((100vw-1280px)/2+32px)] pl-8 text-lg"> <!-- text -->
+            <div class="flex flex-col justify-center flex-none space-y-6 items-center pr-[calc((100vw-1280px)/2+32px)] pl-8 text-lg">
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.</br>
-                Quibusdam quo ipsa assumenda, eum enim qui provident</br>
-                necessitatibus perferendis, consectetur harum ex explicabo</br>
-                voluptate exercitationem sapiente soluta! Vero omnis,</br>
-                veritatis ad laboriosam facere error nam neque assumenda</br>
-                recusandae saepe.°Illum, reprehenderit accusamus
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                Quibusdam quo ipsa assumenda, eum enim qui provident<br>
+                necessitatibus perferendis, consectetur harum ex explicabo<br>
+                voluptate exercitationem sapiente soluta! Vero omnis,<br>
+                veritatis ad laboriosam facere error nam neque assumenda<br>
+                recusandae saepe. Illum, reprehenderit accusamus
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.</br>
-                Quibusdam quo ipsa assumenda, eum enim qui provident</br>
-                necessitatibus perferendis, consectetur harum ex explicabo</br>
-                voluptate exercitationem sapiente soluta! Vero omnis,</br>
-                veritatis ad laboriosam facere error nam neque assumenda</br>
-                recusandae saepe.°Illum, reprehenderit accusamus
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                Quibusdam quo ipsa assumenda, eum enim qui provident<br>
+                necessitatibus perferendis, consectetur harum ex explicabo<br>
+                voluptate exercitationem sapiente soluta! Vero omnis,<br>
+                veritatis ad laboriosam facere error nam neque assumenda<br>
+                recusandae saepe. Illum, reprehenderit accusamus
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
           <div id="scrollWrapper" class="relative w-full max-w-6xl mx-auto overflow-visible py-10 cursor-pointer perspective-distant">
 
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-28 bg-linear-to-r from-indigo-500 via-purple-500 to-cyan-500 blur-2xl opacity-60 animate-pulse -z-10 pointer-events-none rounded-full"></div>
