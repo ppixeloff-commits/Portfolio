@@ -34,7 +34,7 @@
         </div>
       </header>
 
-      <section id="home" class="">
+      <section id="home" class="pb-9">
         <div class="flex flex-col md:flex-row h-[calc(100vh-64px)] overflow-hidden"> <!--Obal textu a obrazku -->
 
           <div class="flex-none w-auto flex items-center pl-[calc((100vw-1280px)/2+32px)] pr-8"> <!--Text-->
@@ -56,7 +56,7 @@
           </div>
       </section>
 
-      <section id="aboutMe" class="py-9">
+      <section id="aboutMe" class="py-9 scroll-mt-16.25">
         <div class="h-auto flex flex-col overflow-hidden space-y-9">
           <div>
             <h1 class="text-5xl text-center font-bold pb-2">
@@ -142,7 +142,38 @@
         </div>
       </section>
 
-      <!-- Projects Section -->
+      <section id="projects" class="py-9 relative h-[400vh] js-scroll-parent">
+        <div class="sticky top-8 h-screen overflow-hidden flex flex-col py-12 pb-32">
+          <div class="text-center">
+            <h1 class="text-5xl text-center font-bold pb-2">
+              Visual <span class="bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-cyan-400">Records</span>
+            </h1>
+            <div class="h-2 w-40 bg-indigo-500 mx-auto rounded"></div>
+          </div>
+
+          <div class="flex gap-28 px-[10vw] transition-transform duration-500 ease-out js-scroll-track items-start mt-auto mb-auto">
+            
+            <div class="shrink-0">
+              <img src="/src/assets/1920x1080.png" class="h-190">
+            </div>
+
+            <div class="shrink-0">
+              <img src="/src/assets/1920x1080.png" class="h-190">
+            </div>
+
+            <div class="shrink-0">
+              <img src="/src/assets/1920x1080.png" class="h-190">
+            </div>
+
+            <div class="shrink-0">
+              <img src="/src/assets/1920x1080.png" class="h-190">
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section
       <section id="projects" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
@@ -151,7 +182,7 @@
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project Card 1 -->
+
             <div class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10">
               <div class="h-48 bg-slate-700 overflow-hidden relative">
                 <img src="https://placehold.co/600x400/1e293b/818cf8?text=3D+Character+Model" alt="Project 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
@@ -170,7 +201,7 @@
               </div>
             </div>
 
-            <!-- Project Card 2 -->
+
             <div class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10">
               <div class="h-48 bg-slate-700 overflow-hidden relative">
                 <img src="https://placehold.co/600x400/1e293b/2dd4bf?text=3D+Environment" alt="Project 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
@@ -189,7 +220,6 @@
               </div>
             </div>
 
-            <!-- Project Card 3 -->
             <div class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10">
               <div class="h-48 bg-slate-700 overflow-hidden relative">
                 <img src="https://placehold.co/600x400/1e293b/c084fc?text=Code+Project" alt="Project 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
@@ -243,7 +273,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
       <!-- Contact Section -->
       <section id="contact" class="py-24 bg-gray-900/50">

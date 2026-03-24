@@ -121,6 +121,39 @@ const observer = new IntersectionObserver((entries) => {
 }, { 
   threshold: 0.2
 });
-
 const scrollElements = document.querySelectorAll('.js-scroll-anim');
 scrollElements.forEach((el) => observer.observe(el));
+
+const scrollParent = document.querySelector('.js-scroll-parent');
+const scrollTrack = document.querySelector('.js-scroll-track');
+
+if (scrollParent && scrollTrack) {
+  const moveTrack = () => {
+    const parentRect = scrollParent.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    const startDelay = 300; 
+
+    let progress = (-parentRect.top - startDelay) / (parentRect.height - windowHeight - startDelay);
+    progress = Math.max(0, Math.min(1, progress));
+
+    const items = scrollTrack.children;
+    if (items.length === 0) return;
+
+    const firstItem = items[0];
+    const lastItem = items[items.length - 1];
+
+    const startOffset = (window.innerWidth / 2) - (firstItem.offsetWidth / 2) - firstItem.offsetLeft;
+
+    const endOffset = (window.innerWidth / 2) - (lastItem.offsetWidth / 2) - lastItem.offsetLeft;
+
+    const currentTranslate = startOffset + progress * (endOffset - startOffset);
+
+    scrollTrack.style.transform = `translateX(${currentTranslate}px)`;
+  };
+
+  window.addEventListener('scroll', moveTrack);
+  window.addEventListener('resize', moveTrack);
+
+  moveTrack();
+}
