@@ -32,12 +32,13 @@
             </button>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <section id="home" class="pb-9">
-        <div class="flex flex-col md:flex-row h-[calc(100vh-64px)] overflow-hidden"> <!--Obal textu a obrazku -->
-
-          <div class="flex-none w-auto flex items-center pl-[calc((100vw-1280px)/2+32px)] pr-8"> <!--Text-->
+    <main>
+      <section id="home" class="scroll-mt-16">
+        <div class="flex flex-col md:flex-row h-[calc(100vh-64px)] overflow-hidden"> 
+          <div class="flex-none w-auto flex items-center pl-[calc((100vw-1280px)/2+32px)] pr-8"> 
             <h1 class="text-6xl font-extrabold">
               <span class="relative z-10">
               <span class="text-5xl">I'm
@@ -51,99 +52,86 @@
             </h1>
           </div>
 
-          <div class="h-full flex-1"> <!--Obrazek-->
+          <div class="h-full flex-1"> 
             <img src="/src/assets/1920x1080.png" class="js-anim-home h-full w-auto max-w-none object-left opacity-0 translate-x-24">
           </div>
+        </div>
       </section>
 
-      <section id="aboutMe" class="py-9 scroll-mt-16.25">
-        <div class="h-auto flex flex-col overflow-hidden space-y-9">
-          <div>
-            <h1 class="text-5xl text-center font-bold pb-2">
-              About <span class="bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-cyan-400">Me</span>
-            </h1>
-            <div class="h-2 w-40 bg-indigo-500 mx-auto rounded"></div>
+      <section id="aboutMe" class="scroll-mt-16 h-[calc(100vh-64px)] flex flex-col justify-between py-10 overflow-hidden">
+        
+        <div class="flex-none">
+          <h1 class="text-5xl text-center font-bold pb-2">
+            About <span class="bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-cyan-400">Me</span>
+          </h1>
+          <div class="h-2 w-40 bg-indigo-500 mx-auto rounded"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center flex-1 min-h-0 w-full mt-6 mb-4">
+          
+          <div class="flex-1 h-full w-full min-w-0">
+            <img src="/src/assets/1920x1080.png" class="js-scroll-anim h-full w-full object-cover object-right opacity-0 -translate-x-24 transition duration-1000 ease-out">
           </div>
 
-          <div class="flex flex-col md:flex-row items-center flex-1 overflow-hidden">
-            <div class="flex-1 min-w-0">
-              <img src="/src/assets/1920x1080.png" 
-                  class="js-scroll-anim h-full w-full max-w-none object-right opacity-0 -translate-x-24 transition duration-1000 ease-out">
-            </div>
+          <div class="flex-1 flex flex-col justify-center space-y-6 pr-[calc((100vw-1280px)/2+32px)] pl-12 text-lg">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+              Quibusdam quo ipsa assumenda, eum enim qui provident<br>
+              necessitatibus perferendis, consectetur harum ex explicabo<br>
+              voluptate exercitationem sapiente soluta! Vero omnis,<br>
+              veritatis ad laboriosam facere error nam neque assumenda<br>
+              recusandae saepe. Illum, reprehenderit accusamus
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+              Quibusdam quo ipsa assumenda, eum enim qui provident<br>
+              necessitatibus perferendis, consectetur harum ex explicabo<br>
+              voluptate exercitationem sapiente soluta! Vero omnis,<br>
+              veritatis ad laboriosam facere error nam neque assumenda<br>
+              recusandae saepe. Illum, reprehenderit accusamus
+            </p>
+          </div>
+        </div>
 
-            <div class="flex flex-col justify-center flex-none space-y-6 items-center pr-[calc((100vw-1280px)/2+32px)] pl-8 text-lg">
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
-                Quibusdam quo ipsa assumenda, eum enim qui provident<br>
-                necessitatibus perferendis, consectetur harum ex explicabo<br>
-                voluptate exercitationem sapiente soluta! Vero omnis,<br>
-                veritatis ad laboriosam facere error nam neque assumenda<br>
-                recusandae saepe. Illum, reprehenderit accusamus
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
-                Quibusdam quo ipsa assumenda, eum enim qui provident<br>
-                necessitatibus perferendis, consectetur harum ex explicabo<br>
-                voluptate exercitationem sapiente soluta! Vero omnis,<br>
-                veritatis ad laboriosam facere error nam neque assumenda<br>
-                recusandae saepe. Illum, reprehenderit accusamus
-              </p>
+        <div id="scrollWrapper" class="flex-none relative w-full max-w-6xl mx-auto overflow-visible py-4 cursor-pointer perspective-distant">
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-28 bg-linear-to-r from-indigo-500 via-purple-500 to-cyan-500 blur-2xl opacity-60 animate-pulse -z-10 pointer-events-none rounded-full"></div>
+
+          <div id="imageTrack" class="relative flex justify-center items-center -space-x-14" style="transform-style: preserve-3d;">
+            <div id="activeHighlight" class="absolute w-48 h-48 bg-white/10 backdrop-blur-md rounded-2xl opacity-0 pointer-events-none z-0 transition-opacity duration-500"></div>
+
+            <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 1;">
+              <img src="/src/assets/carouselIcons/javascript.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
+            </div>
+            <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 2;">
+              <img src="/src/assets/carouselIcons/tailwind.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
+            </div>
+            <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 3;">
+              <img src="/src/assets/carouselIcons/python.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
+            </div>
+            <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 4;">
+              <img src="/src/assets/carouselIcons/html.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
+            </div>
+            <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 5;">
+              <img src="/src/assets/carouselIcons/blender.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
+            </div>
+            <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 4;">
+              <img src="/src/assets/carouselIcons/solidworks.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
+            </div>
+            <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 3;">
+              <img src="/src/assets/carouselIcons/blockbench.png" class="w-32 h-32 object-contain drop-shadow-2xl">
+            </div>
+            <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 2;">
+              <img src="/src/assets/carouselIcons/rhinoceros.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
+            </div>
+            <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 1;">
+              <img src="/src/assets/carouselIcons/autocad.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
             </div>
           </div>
         </div>
       </section>
 
-          <div id="scrollWrapper" class="relative w-full max-w-6xl mx-auto overflow-visible py-10 cursor-pointer perspective-distant">
-
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-28 bg-linear-to-r from-indigo-500 via-purple-500 to-cyan-500 blur-2xl opacity-60 animate-pulse -z-10 pointer-events-none rounded-full"></div>
-
-            <div id="imageTrack" class="relative flex justify-center items-center -space-x-14" style="transform-style: preserve-3d;">
-
-              <div id="activeHighlight" class="absolute w-48 h-48 bg-white/10 backdrop-blur-md rounded-2xl opacity-0 pointer-events-none z-0 transition-opacity duration-500"></div>
-
-              <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 1;">
-                <img src="/src/assets/carouselIcons/javascript.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
-              </div>
-
-              <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 2;">
-                <img src="/src/assets/carouselIcons/tailwind.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
-              </div>
-
-              <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 3;">
-                <img src="/src/assets/carouselIcons/python.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
-              </div>
-
-              <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 4;">
-                <img src="/src/assets/carouselIcons/html.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
-              </div>
-
-              <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 5;">
-                <img src="/src/assets/carouselIcons/blender.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
-              </div>
-
-              <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 4;">
-                <img src="/src/assets/carouselIcons/solidworks.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
-              </div>
-
-              <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 3;">
-                <img src="/src/assets/carouselIcons/blockbench.png" class="w-32 h-32 object-contain drop-shadow-2xl">
-              </div>
-
-              <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 2;">
-                <img src="/src/assets/carouselIcons/rhinoceros.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
-              </div>
-
-              <div class="carousel-item relative flex-none transition-transform duration-500 ease-out w-48 h-48 flex items-center justify-center" style="z-index: 1;">
-                <img src="/src/assets/carouselIcons/autocad.svg" class="w-32 h-32 object-contain drop-shadow-2xl">
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" class="py-9 relative h-[400vh] js-scroll-parent">
-        <div class="sticky top-8 h-screen overflow-hidden flex flex-col py-12 pb-32">
+      <section id="projects" class="py-9 relative h-[400vh] js-scroll-parent scroll-mt-16">
+        <div class="sticky top-16 h-[calc(100vh-64px)] overflow-hidden flex flex-col py-10 pb-32">
           <div class="text-center">
             <h1 class="text-5xl text-center font-bold pb-2">
               Visual <span class="bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-cyan-400">Records</span>
@@ -151,135 +139,27 @@
             <div class="h-2 w-40 bg-indigo-500 mx-auto rounded"></div>
           </div>
 
-          <div class="flex gap-28 px-[10vw] transition-transform duration-500 ease-out js-scroll-track items-start mt-auto mb-auto">
-            
+          <div class="flex gap-28 px-[10vw] transition-transform duration-500 ease-out js-scroll-track items-start mt-6 mb-4">
             <div class="shrink-0">
               <img src="/src/assets/1920x1080.png" class="h-190">
             </div>
-
             <div class="shrink-0">
               <img src="/src/assets/1920x1080.png" class="h-190">
             </div>
-
             <div class="shrink-0">
               <img src="/src/assets/1920x1080.png" class="h-190">
             </div>
-
             <div class="shrink-0">
               <img src="/src/assets/1920x1080.png" class="h-190">
             </div>
-            
           </div>
         </div>
       </section>
 
-      <!-- Projects Section
-      <section id="projects" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="text-indigo-400">Projects</span></h2>
-            <div class="h-1 w-20 bg-indigo-500 mx-auto rounded"></div>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            <div class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10">
-              <div class="h-48 bg-slate-700 overflow-hidden relative">
-                <img src="https://placehold.co/600x400/1e293b/818cf8?text=3D+Character+Model" alt="Project 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white mb-2">Fantasy Character Model</h3>
-                <p class="text-slate-400 mb-4 line-clamp-3">A detailed 3D character model created in Blender, featuring intricate textures and animations ready for game integration.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-indigo-900/50 text-indigo-300">Blender</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-cyan-900/50 text-cyan-300">Substance Painter</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-purple-900/50 text-purple-300">Unity</span>
-                </div>
-                <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
-                  View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-              </div>
-            </div>
-
-
-            <div class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10">
-              <div class="h-48 bg-slate-700 overflow-hidden relative">
-                <img src="https://placehold.co/600x400/1e293b/2dd4bf?text=3D+Environment" alt="Project 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white mb-2">Sci-Fi Environment</h3>
-                <p class="text-slate-400 mb-4 line-clamp-3">An immersive 3D environment designed for virtual reality experiences, including lighting, materials, and interactive elements.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-indigo-900/50 text-indigo-300">Maya</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-emerald-900/50 text-emerald-300">Arnold</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-cyan-900/50 text-cyan-300">VR</span>
-                </div>
-                <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
-                  View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-              </div>
-            </div>
-
-            <div class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10">
-              <div class="h-48 bg-slate-700 overflow-hidden relative">
-                <img src="https://placehold.co/600x400/1e293b/c084fc?text=Code+Project" alt="Project 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white mb-2">Python Automation Script</h3>
-                <p class="text-slate-400 mb-4 line-clamp-3">A Python script for automating data processing tasks, featuring error handling, logging, and a clean CLI interface.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-indigo-900/50 text-indigo-300">Python</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-yellow-900/50 text-yellow-300">Pandas</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-pink-900/50 text-pink-300">CLI</span>
-                </div>
-                <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
-                  View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-              </div>
-            </div>
-            <div class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10">
-              <div class="h-48 bg-slate-700 overflow-hidden relative">
-                <img src="https://placehold.co/600x400/1e293b/f59e0b?text=3D+Prop" alt="Project 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white mb-2">Game Prop Collection</h3>
-                <p class="text-slate-400 mb-4 line-clamp-3">A set of detailed 3D props designed for game environments, optimized for performance and visual quality.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-indigo-900/50 text-indigo-300">Blender</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-yellow-900/50 text-yellow-300">Unreal Engine</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-pink-900/50 text-pink-300">LOD</span>
-                </div>
-                <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
-                  View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-              </div>
-            </div>
-            <div class="group bg-slate-800 rounded-2xl overflow-hidden border border-slate-700 hover:border-indigo-500 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-indigo-500/10">
-              <div class="h-48 bg-slate-700 overflow-hidden relative">
-                <img src="https://placehold.co/600x400/1e293b/10b981?text=Web+Tool" alt="Project 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white mb-2">JavaScript Utility Library</h3>
-                <p class="text-slate-400 mb-4 line-clamp-3">A lightweight JavaScript library for common web development tasks, with TypeScript support and comprehensive documentation.</p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-indigo-900/50 text-indigo-300">JavaScript</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-yellow-900/50 text-yellow-300">TypeScript</span>
-                  <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-pink-900/50 text-pink-300">NPM</span>
-                </div>
-                <a href="#" class="inline-flex items-center text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
-                  View Source <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- Contact Section -->
-      <section id="contact" class="py-24 bg-gray-900/50">
+      <section id="contact" class="scroll-mt-16 min-h-[calc(100vh-64px)] flex flex-col justify-center items-center bg-gray-900/50 py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-indigo-400">Touch</span></h2>
-          <div class="h-1 w-20 bg-indigo-500 mx-auto rounded mb-8"></div>
+          <h2 class="text-5xl font-bold mb-4 pb-2">Get In <span class="bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-cyan-400">Touch</span></h2>
+          <div class="h-2 w-40 bg-indigo-500 mx-auto rounded mb-12"></div>
           <p class="text-lg text-slate-300 mb-10 max-w-2xl mx-auto">
             I'm currently open for new opportunities. Whether you have a question, a project idea, or just want to say hi, I'll try my best to get back to you!
           </p>
@@ -291,7 +171,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-950 py-8 border-t border-slate-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-slate-400 text-sm text-center md:text-left">
