@@ -125,109 +125,45 @@ const observer = new IntersectionObserver((entries) => {
 const scrollElements = document.querySelectorAll('.js-scroll-anim');
 scrollElements.forEach((el) => observer.observe(el));
 
-// --- Projects Smooth Scroll & Exact Center Alignment ---
-const scrollParent = document.querySelector('.js-scroll-parent');
-const scrollTrack = document.querySelector('.js-scroll-track');
+// --- Projects section ---
 
-if (scrollParent && scrollTrack) {
+const projectsSection = document.getElementById('projects');
+const firstImageWrapper = document.getElementById('first-image-wrapper');
+const firstImage = document.getElementById('first-image');
+const projectsTitle = document.getElementById('projects-title');
+
+if (projectsSection && firstImageWrapper) {
   let currentProgress = 0;
   let targetProgress = 0;
-  let isAnimating = false;
-  let itemData = [];
-
-  const items = Array.from(scrollTrack.children);
-
-  items.forEach(item => {
-    item.style.position = 'relative';
-  });
 
   const updateTarget = () => {
-    const rect = scrollParent.getBoundingClientRect();
-    const scrollableHeight = rect.height - window.innerHeight;
-    
-    let progress = -rect.top / scrollableHeight;
+    const rect = projectsSection.getBoundingClientRect();
+    const scrollDistance = window.innerHeight;
+    let progress = -rect.top / scrollDistance;
     targetProgress = Math.max(0, Math.min(1, progress));
-
-    if (!isAnimating) {
-      isAnimating = true;
-      requestAnimationFrame(renderScroll);
-    }
   };
 
-  const calculateLayout = () => {
-    if (items.length === 0) return;
-    
-    // Zásadní oprava: resetování jakýchkoliv transformací před měřením,
-    // aby nám scale a translate nerozbil reálné fyzické souřadnice elementů.
-    scrollTrack.style.transform = 'none';
-    items.forEach(item => {
-      const img = item.querySelector('img');
-      if (img) img.style.transform = 'none';
-    });
-    
-    void scrollTrack.offsetWidth; // vynucení překreslení DOMu
-
-    const trackRect = scrollTrack.getBoundingClientRect();
-
-    itemData = items.map(item => {
-      const itemRect = item.getBoundingClientRect();
-      return {
-        element: item,
-        img: item.querySelector('img'),
-        // Přesná fyzická vzdálenost středu elementu od začátku celého kontejneru
-        centerOffset: (itemRect.left - trackRect.left) + (itemRect.width / 2)
-      };
-    });
-    
-    updateTarget();
-  };
-
-  const renderScroll = () => {
+  const animate = () => {
     currentProgress += (targetProgress - currentProgress) * 0.08;
 
-    const firstCenter = itemData[0].centerOffset;
-    const lastCenter = itemData[itemData.length - 1].centerOffset;
-    const totalDistance = lastCenter - firstCenter;
+    const scale = 0.6 + (0.4 * currentProgress);
+    const borderRadius = 40 * (1 - currentProgress);
+
+    firstImageWrapper.style.transform = `scale(${scale})`;
     
-    const currentCenterTarget = firstCenter + (currentProgress * totalDistance);
-    const viewportCenter = window.innerWidth / 2;
-    
-    const translateX = viewportCenter - currentCenterTarget;
-    
-    scrollTrack.style.transform = `translate3d(${translateX}px, 0px, 0px)`;
-
-    itemData.forEach((data) => {
-      if (!data.img) return;
-
-      const itemCenterOnScreen = data.centerOffset + translateX;
-      const distance = Math.abs(itemCenterOnScreen - viewportCenter);
-
-      let scale = 1;
-      let zIndex = 1;
-
-      if (distance < viewportCenter) {
-        const intensity = Math.max(0, 1 - (distance / viewportCenter));
-        // Lehčí scale efekt pro plynulejší pocit (8 % navíc)
-        scale = 1 + (intensity * 0.08);
-        zIndex = Math.round(10 + intensity * 10); 
-      }
-
-      data.img.style.transformOrigin = 'center center';
-      data.img.style.transform = `scale(${scale})`;
-      data.element.style.zIndex = zIndex;
-    });
-
-    if (Math.abs(targetProgress - currentProgress) > 0.0001) {
-      requestAnimationFrame(renderScroll);
-    } else {
-      currentProgress = targetProgress;
-      isAnimating = false;
+    if (firstImage) {
+      firstImage.style.borderRadius = `${borderRadius}px`;
     }
+
+    if (projectsTitle) {
+      projectsTitle.style.opacity = 1 - (currentProgress * 2);
+      projectsTitle.style.transform = `translateY(${currentProgress * -50}px)`;
+    }
+
+    requestAnimationFrame(animate);
   };
 
   window.addEventListener('scroll', updateTarget, { passive: true });
-  window.addEventListener('resize', calculateLayout);
-  window.addEventListener('load', calculateLayout);
-
-  calculateLayout();
+  updateTarget();
+  animate();
 }

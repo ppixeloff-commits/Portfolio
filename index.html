@@ -130,30 +130,20 @@
         </div>
       </section>
 
-      <section id="projects" class="py-9 relative h-[400vh] js-scroll-parent scroll-mt-16">
-        <div class="sticky top-16 h-[calc(100vh-64px)] overflow-hidden flex flex-col py-10 pb-32">
+      <section id="projects" class="relative h-[200vh] bg-black">
+        <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
           
-          <div class="text-center relative z-20">
-            <h1 class="text-5xl text-center font-bold pb-2">
+          <div id="projects-title" class="absolute top-10 left-0 right-0 text-center z-20">
+            <h1 class="text-5xl font-bold pb-2 text-white">
               Visual <span class="bg-clip-text text-transparent bg-linear-to-r from-indigo-400 to-cyan-400">Records</span>
             </h1>
             <div class="h-2 w-40 bg-indigo-500 mx-auto rounded"></div>
           </div>
 
-          <div class="flex gap-28 js-scroll-track items-center mt-12 mb-4 h-full will-change-transform w-max relative z-10">
-            <div class="shrink-0 relative">
-              <img src="/src/assets/1920x1080.png" class="h-[60vh] object-contain rounded-xl">
-            </div>
-            <div class="shrink-0 relative">
-              <img src="/src/assets/1920x1080.png" class="h-[60vh] object-contain rounded-xl">
-            </div>
-            <div class="shrink-0 relative">
-              <img src="/src/assets/1920x1080.png" class="h-[60vh] object-contain rounded-xl">
-            </div>
-            <div class="shrink-0 relative">
-              <img src="/src/assets/1920x1080.png" class="h-[60vh] object-contain rounded-xl">
-            </div>
+          <div id="first-image-wrapper" class="w-full h-full origin-center will-change-transform flex items-center justify-center" style="transform: scale(0.6);">
+            <img id="first-image" src="/src/assets/1920x1080.png" class="w-full h-full object-cover rounded-[40px] transition-none">
           </div>
+          
         </div>
       </section>
 
