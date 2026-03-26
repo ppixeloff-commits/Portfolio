@@ -1,5 +1,26 @@
 import './style.css'
 
+// Smooth scrolling
+
+const lenis = new Lenis({
+  duration: 1.2, 
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+  direction: 'vertical', 
+  gestureDirection: 'vertical', 
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 // --- Utility & Navbar ---
 document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -126,7 +147,6 @@ const scrollElements = document.querySelectorAll('.js-scroll-anim');
 scrollElements.forEach((el) => observer.observe(el));
 
 // --- Projects section ---
-
 const projectsSection = document.getElementById('projects');
 const firstImageWrapper = document.getElementById('first-image-wrapper');
 const firstImage = document.getElementById('first-image');
@@ -138,8 +158,9 @@ if (projectsSection && firstImageWrapper) {
 
   const updateTarget = () => {
     const rect = projectsSection.getBoundingClientRect();
-    const scrollDistance = window.innerHeight;
-    let progress = -rect.top / scrollDistance;
+    const startOffset = window.innerHeight * 0.4; 
+    
+    let progress = (startOffset - rect.top) / startOffset;
     targetProgress = Math.max(0, Math.min(1, progress));
   };
 
