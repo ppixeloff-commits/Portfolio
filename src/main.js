@@ -3,7 +3,7 @@ import './style.css'
 // Smooth scrolling
 
 const lenis = new Lenis({
-  duration: 1.2, 
+  duration: 1.5, 
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
   direction: 'vertical', 
   gestureDirection: 'vertical', 
@@ -153,22 +153,15 @@ const firstImage = document.getElementById('first-image');
 const projectsTitle = document.getElementById('projects-title');
 
 if (projectsSection && firstImageWrapper) {
-  let currentProgress = 0;
-  let targetProgress = 0;
-
-  const updateTarget = () => {
+  const onScroll = () => {
     const rect = projectsSection.getBoundingClientRect();
     const startOffset = window.innerHeight * 0.4; 
     
     let progress = (startOffset - rect.top) / startOffset;
-    targetProgress = Math.max(0, Math.min(1, progress));
-  };
+    progress = Math.max(0, Math.min(1, progress));
 
-  const animate = () => {
-    currentProgress += (targetProgress - currentProgress) * 0.08;
-
-    const scale = 0.6 + (0.4 * currentProgress);
-    const borderRadius = 40 * (1 - currentProgress);
+    const scale = 0.6 + (0.4 * progress);
+    const borderRadius = 40 * (1 - progress);
 
     firstImageWrapper.style.transform = `scale(${scale})`;
     
@@ -177,14 +170,11 @@ if (projectsSection && firstImageWrapper) {
     }
 
     if (projectsTitle) {
-      projectsTitle.style.opacity = 1 - (currentProgress * 2);
-      projectsTitle.style.transform = `translateY(${currentProgress * -50}px)`;
+      projectsTitle.style.opacity = 1 - (progress * 2);
+      projectsTitle.style.transform = `translateY(${progress * -50}px)`;
     }
-
-    requestAnimationFrame(animate);
   };
 
-  window.addEventListener('scroll', updateTarget, { passive: true });
-  updateTarget();
-  animate();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
