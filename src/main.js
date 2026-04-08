@@ -151,25 +151,32 @@ const projectsSection = document.getElementById('projects');
 const projectsTrack = document.getElementById('projects-track');
 
 if (projectsSection && projectsTrack) {
+  let currentX = 0;
+  let targetX = 0;
+  const ease = 0.08;
+
   window.addEventListener('scroll', () => {
     const rect = projectsSection.getBoundingClientRect();
-
-    // Celková vzdálenost, kterou lze v sekci odscrollovat
     const scrollDistance = projectsSection.offsetHeight - window.innerHeight;
-
-    // Velikost pauzy na začátku a na konci (např. 50 % výšky okna)
     const pauseBuffer = window.innerHeight * 0.5;
-
-    // Skutečná vzdálenost, během které probíhá animace
     const activeScrollDistance = scrollDistance - (pauseBuffer * 2);
 
-    // Výpočet progrese posunutý o počáteční pauzu
     let progress = (-rect.top - pauseBuffer) / activeScrollDistance;
-
-    // Omezení hodnot od 0 do 1 (tím vznikne pauza na krajích)
     progress = Math.max(0, Math.min(1, progress));
 
     const maxScroll = projectsTrack.scrollWidth - window.innerWidth;
-    projectsTrack.style.transform = `translateX(-${progress * maxScroll}px)`;
+    targetX = progress * maxScroll;
   }, { passive: true });
+
+  function animateProjects() {
+    currentX += (targetX - currentX) * ease;
+
+    if (Math.abs(targetX - currentX) > 0.01) {
+      projectsTrack.style.transform = `translateX(-${currentX}px)`;
+    }
+
+    requestAnimationFrame(animateProjects);
+  }
+
+  animateProjects();
 }
